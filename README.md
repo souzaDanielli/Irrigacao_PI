@@ -1,2 +1,8 @@
-# Irriga-o_PI
-Referente ao Projeto Integrador do 3 termo de irrigação com multiplos sensores
+#Para subir o banco
+sudo service postgresql start
+
+#Para rodar o projeto
+node server.js
+
+#Senha do banco
+root
