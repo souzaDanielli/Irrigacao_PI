@@ -29,6 +29,17 @@ app.post("/api/dados", async (req, res) => {
     }
 });
 
+//rota delete
+app.delete("/api/dados/:id", async (req, res) => {
+    const { id } = req.params;
+    try {
+        await prisma.sensor.delete({ where: { id: parseInt(id) } });
+        res.json({ message: "Registro deletado!" });
+    } catch (error) {
+        res.status(500).json({ error: "Erro ao deletar dados" });
+    }
+});
+
 app.listen(port, '0.0.0.0', () => {
     console.log(`Server na porta ${port}`);
 });
