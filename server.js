@@ -40,6 +40,6 @@ app.delete("/api/dados/:id", async (req, res) => {
     }
 });
 
-app.listen(port, '0.0.0.0', () => {
+app.listen(port, () => {
     console.log(`Server na porta ${port}`);
 });

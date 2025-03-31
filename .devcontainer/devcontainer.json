@@ -1,5 +1,0 @@
-{
-    "name": "My Codespace",
-    "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:0-16",
-    "forwardPorts": [8080]
-}
