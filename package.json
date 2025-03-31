@@ -6,6 +6,6 @@
   },
   "scripts": {
     "start": "node server.js",
-    "vercel-build": "npx prisma migrate deploy"
+    "vercel-build": "prisma generate && prisma migrate deploy && npm run build"
   }
 }
