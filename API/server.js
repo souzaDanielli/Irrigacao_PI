@@ -13,6 +13,7 @@ app.get("/api/dados", async (req, res) => {
         const sensores = await prisma.sensor.findMany();
         res.json(sensores);
     } catch (error){
+        console.error('Erro ao buscar dados:', error);
         res.status(500).json({ error: "Erro na busca de dados" });
     }
 });
@@ -21,11 +22,13 @@ app.get("/api/dados", async (req, res) => {
 app.post("/api/dados", async (req, res) => {
     const { umidadeSolo1, umidadeSolo2, umidadeSolo3, umidadeSolo4, irrigador1, irrigador2, irrigador3, irrigador4 } = req.body;
     try {
+        console.log('Rota /api/dados chamada com dados:', req.body);
         const novaLeitura = await prisma.sensor.create({
             data: { umidadeSolo1, umidadeSolo2, umidadeSolo3, umidadeSolo4, irrigador1, irrigador2, irrigador3, irrigador4 },
         });
         res.json(novaLeitura);
     } catch (error) {
+        console.log('Nova leitura:', novaLeitura);
         res.status(500).json({ error: "Erro ao inserir dados" });
     }
 });

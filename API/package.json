@@ -8,8 +8,8 @@
   },
   
   "scripts": {
-  "start": "node server.js",
-  "build": "npx prisma generate --schema=./prisma/schema.prisma",
-  "vercel-build": "npx prisma generate --schema=./prisma/schema.prisma"
+  "start": "node API/server.js",
+  "build": "prisma generate",
+  "vercel-build": "prisma generate && prisma migrate deploy"
 }
 }
