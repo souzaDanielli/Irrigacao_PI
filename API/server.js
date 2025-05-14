@@ -9,6 +9,7 @@ app.use(express.json());
 //rota get
 app.get("/api/dados", async (req, res) => {
     try{
+        console.log('Rota /api/dados chamada');
         const sensores = await prisma.sensor.findMany();
         res.json(sensores);
     } catch (error){
