@@ -8,7 +8,7 @@
   },
   
   "scripts": {
-  "start": "node API/server.js",
+  "start": "node server.js",
   "build": "prisma generate",
   "vercel-build": "prisma generate && prisma migrate deploy"
 }
