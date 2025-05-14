@@ -1,5 +1,5 @@
 const express = require('express');
-const prisma = require('./API/db');
+const prisma = require('./db');
 
 const app = express();
 const port = process.env.PORT || 8080;
