@@ -6,9 +6,10 @@
     "pg": "^8.14.1",
     "prisma": "^6.5.0"
   },
+  
   "scripts": {
-    "start": "node server.js",
-    "build": "prisma generate",
-    "vercel-build": "prisma generate && prisma migrate deploy"
-  }
+  "start": "node server.js",
+  "build": "npx prisma generate --schema=./prisma/schema.prisma",
+  "vercel-build": "npx prisma generate --schema=./prisma/schema.prisma"
+}
 }
