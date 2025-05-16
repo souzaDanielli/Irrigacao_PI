@@ -8,13 +8,9 @@ datasource db {
 }
 
 model Sensor {
-  id Int @id @default(autoincrement())
-  umidadeSolo1 Int
-  umidadeSolo2 Int
-  umidadeSolo3 Int
-  umidadeSolo4 Int
-  irrigador1 Boolean
-  irrigador2 Boolean
-  irrigador3 Boolean
-  irrigador4 Boolean
+  id Int                  @id @default(autoincrement())
+  dispositivo String   // Identificação única do ESP
+  umidade Int
+  irrigador   Boolean
+  timestamp   DateTime    @default(now())
 } 
