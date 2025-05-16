@@ -20,11 +20,11 @@ app.get("/api/dados", async (req, res) => {
 
 //rota post
 app.post("/api/dados", async (req, res) => {
-    const { umidadeSolo1, umidadeSolo2, umidadeSolo3, umidadeSolo4, irrigador1, irrigador2, irrigador3, irrigador4 } = req.body;
+    const { dispositivo, umidade, irrigador } = req.body;
     try {
         console.log('Rota /api/dados chamada com dados:', req.body);
         const novaLeitura = await prisma.sensor.create({
-            data: { umidadeSolo1, umidadeSolo2, umidadeSolo3, umidadeSolo4, irrigador1, irrigador2, irrigador3, irrigador4 },
+            data: { dispositivo, umidade, irrigador },
         });
         res.json(novaLeitura);
     } catch (error) {
